@@ -1,11 +1,14 @@
 //Once you complete a problem, open up Chrome and check the answer in the console.
 
 
-//Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
+// DONE = Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
   //Code here
 
-
+var me = {
+  name: "Kim Scarabello",
+  age: 30,
+}
 
 
 //NEXT PROBLEM
@@ -13,20 +16,34 @@
 
 
 
-//Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
+//DONE Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
   //Code here
 
+  var favoriteThings = {
+    band: "Soundgarden",
+    food: "protein shakes",
+    person: "Abraham Lincoln",
+    book: "The Prophet",
+    movie: "What Dreams May Come",
+    holiday: "Christmas",
+  }
 
-//After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
+
+//DONE After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
+
+  //Code here
+  favoriteThings.car = "Hyundai Accent";
+  favoriteThings.brand = "Starbucks";
+
+
+
+//DONE Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 
   //Code here
 
-
-//Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
-
-  //Code here
-
+favoriteThings.food = "Chicken Nuggets";
+favoriteThings.book = "Harry Potter";
 
 
 
@@ -44,7 +61,18 @@ that is named color, with the value being the color of your backpack. */
 
   //Code here
 
+var backPack = {
+
+}
+
+var item = 'firstPocket';
+backPack[item] = "chapstick";
+
+
+
 //After you do the above, alert your entire backPack object.
+
+// alert(backPack);
 
   //Code here
 
@@ -54,7 +82,7 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code here
 
-
+console.log(backPack);
 
 
 //NEXT PROBLEM
@@ -64,12 +92,28 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
+
+
+ var alsoMe = {
+
+   name: "Kim",
+   age: 30,
+   height: "5'7",
+   gender: "female",
+   married: false,
+   eyeColor: "blue",
+   hairColor: "brunette",
+
+ }
   //Code Here
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
 
+for (var prop in alsoMe){
+  alert(prop);
+}
 
 
 
@@ -82,11 +126,24 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var album = {
+  "Night and Day": 230,
+  "Summertime": 330,
+  "The Way You Look Tonight": 300,
+  "Blame It On My Youth": 400,
+  "Don't Get Around Much Anymore": 430,
+
+}
+
+
+
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
-
+for (var prop in album){
+  alert(prop);
+};
 
 
 //NEXT PROBLEM
@@ -98,9 +155,26 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var states = {
+  Maryland: 300000,
+  Illinois: 1000000,
+  California: 50000000,
+  Mississippi: 12,
+  Washington: 80000
+}
+
+
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
+
+  for (var prop in states){
+    if (states[prop] > 30000){
+      alert(prop);
+    }
+  };
+
+
 
 
 
@@ -123,10 +197,24 @@ that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
 
+for (var prop in user1){
+  if (!user1[prop]){
+    delete user1[prop];
+  } 
+}
+
+
+
+
+
+
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
 
+user1["name"] = 'Kim';
+user1["pwHash"] = 'HiThere1';
+user1["username"] = 'Kimbereli09';
 
 
 
@@ -149,12 +237,17 @@ var user2 = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
+user2.name = "Tyler S. McGinnis";
+user2.email = "tyler.mcginnis@devmounta.in";
+
+
   //Code Here
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
 
+user2.sayEmail();
 
 
 
@@ -165,18 +258,31 @@ var user2 = {
 
 //Create an empty object called methodCollection.
 
+var methodCollection = {};
+
   //Code Here
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
+
+ methodCollection.alertHello = function( ){
+   alert('hello');
+ };
+
+ methodCollection.logHello = function(){
+   console.log('hello');
+ }
+
   //Code Here
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
+ methodCollection.alertHello();
 
+ methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -187,6 +293,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
+
+  function makePerson(name, birthday, ssn){
+    var person = {
+      name:name,
+      birthday: birthday,
+      ssn: ssn
+    }
+    return person;
+  }
 
 
 
@@ -199,6 +314,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
   //Code Here
 
 
+function makeCard (cardNumber, expirationDate, securityCode){
+  var creditCard = {
+  
+
+  }
+  return creditCard;
+}
+
 
 //NEXT PROBLEM
 
@@ -210,3 +333,13 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+
+function bindCard(person, creditCard){
+  for(var prop in creditCard){
+    person[prop] = creditCard[prop];
+  }
+  return person;
+}
+ 
+
+
